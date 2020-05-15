@@ -20,7 +20,7 @@ jobs:
       - name: Publish Site
         uses: chabad360/hugo-gh-pages@master
         with:
-          githubToken: 4e645e35f9148fc20e3a73d56b0406ad6afbdf2f
+          githubToken: 95594e8498999f768de7458ef1612892f002a582
           branch: master
           repo: goto10/goto10.github.io
           args: --gc --minify --cleanDestinationDir
