@@ -5,25 +5,19 @@ on:
     types: [started]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  build-deploy:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout Repo
+        uses: actions/checkout@master
         with:
-          submodules: false # Fetch Hugo themes
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@master
-        with:
-          hugo-version: '0.68.3'
-          # extended: true
-
-      - name: Build
-        run: hugo --minify
-
-      - name: Deploy
+      - name: Publish Site
         uses: goto10/goto10.github.io@master
         with:
           github_token: 4e645e35f9148fc20e3a73d56b0406ad6afbdf2f
-          publish_dir: ./public
+          branch: master
+          repo: goto10/goto10.github.io
+          args: --gc --minify --cleanDestinationDir
