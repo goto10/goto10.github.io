@@ -14,8 +14,11 @@ jobs:
         with:
           submodules: true
 
+      - name: Build Site
+        uses: chabad360/hugo-actions@master
+
       - name: Publish Site
-        uses: goto10/goto10.github.io@master
+        uses: goto10/personal-site-hugo@master
         with:
           github_token: 4e645e35f9148fc20e3a73d56b0406ad6afbdf2f
           branch: master
