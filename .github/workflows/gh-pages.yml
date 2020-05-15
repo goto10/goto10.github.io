@@ -15,7 +15,7 @@ jobs:
           submodules: true
 
       - name: Build Site
-        uses: chabad360/hugo-gh-pages@v1.2
+        uses: chabad360/hugo-gh-pages@master
 
       - name: Publish Site
         uses: chabad360/hugo-gh-pages@master
